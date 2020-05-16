@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:score="http://thymeleafexamples">
+
+<head>
+    <title>Coronovirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+<!--<p th:text="${input1}"></p>-->
+<h1>Coronovirus Tracker Application</h1>
+<p>The Website contains total number of coronovirus cases reported till date.</p>
+
+<div class="jumbotron">
+    <h1 class="display-4" th:text="${totalCases1}"></h1>
+    <p class="lead">Total Cases Reported of Coronavirus COVID-19.</p>
+<!--    <hr class="my-4">-->
+    <h1 class="display-4" th:text="${differenceCases1}"></h1>
+    <p class="lead">Total Cases Reported of Coronavirus COVID-19 from previous day.</p>
+</div>
+
+<div class="container">
+<table class="table">
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases Reported</th></br>
+        <th>Toatal Cases Day Wise</th>
+    </tr>
+    <tr th:each="input2:${input1}">
+        <td th:text="${input2.state}"></td>
+        <td th:text="${input2.country}"></td>
+        <td th:text="${input2.latestTotalStats}">0</td>
+        <td th:text="${input2.differenceCases}"></td>
+
+    </tr>
+</table>
+</div>
+</body>
+
+</html>
